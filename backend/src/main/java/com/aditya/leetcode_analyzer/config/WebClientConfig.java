@@ -12,7 +12,8 @@ public class WebClientConfig {
         return WebClient.builder()
                 .baseUrl("https://leetcode.com")
                 .defaultHeader("Content-Type", "application/json")
+                .defaultHeader("Origin", "https://leetcode.com")
+                .defaultHeader("Referer", "https://leetcode.com/")
                 .build();
     }
 }
-xw
