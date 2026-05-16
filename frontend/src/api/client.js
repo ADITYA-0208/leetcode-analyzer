@@ -1,4 +1,6 @@
-const BASE = '/api'
+// Local dev: Vite proxies /api → localhost:8080
+// Production: set VITE_API_URL in Vercel (e.g. https://your-app.back4app.io/api)
+const BASE = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '')
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {
